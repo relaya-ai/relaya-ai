@@ -23,8 +23,12 @@ func TestPiHarnessUsesTheWebEntrypointAndDurablePiProfile(t *testing.T) {
 	if tool.prepareCatalogFn == nil {
 		t.Fatal("Pi Harness must prepare the durable Pi model catalog")
 	}
-	if !strings.Contains(tool.InstallCmd, "github:pi-harness/pi-harness") {
-		t.Fatalf("InstallCmd = %q, want the official GitHub repository", tool.InstallCmd)
+	// The published package, not a `github:` ref: a branch install pins whatever that branch holds, npm ignores `--registry` for it so the China fallbacks below are inert, and a deleted ref breaks the installer outright.
+	if !strings.Contains(tool.InstallCmd, "@pi-harness/pi-harness@latest") {
+		t.Fatalf("InstallCmd = %q, want the published @pi-harness/pi-harness package", tool.InstallCmd)
+	}
+	if strings.Contains(tool.InstallCmd, "github:") {
+		t.Fatalf("InstallCmd = %q, want a registry install rather than a git ref", tool.InstallCmd)
 	}
 }
 

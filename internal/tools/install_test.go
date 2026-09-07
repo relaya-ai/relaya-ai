@@ -125,7 +125,7 @@ func TestClaudeInstallerUsesTheChinaMirrorFallback(t *testing.T) {
 func TestNpmInstallersRetryThroughTheChinaRegistry(t *testing.T) {
 	npmTools := []string{
 		"codex", "opencode", "gemini", "crush", "cline", "openclaw",
-		"continue", "deepseek-harness", "kilo", "pi", "pi-web", "copilot", "droid",
+		"continue", "deepseek-harness", "kilo", "pi", "pi-web", "pi-harness", "copilot", "droid",
 		"llxprt", "grok", "qwen-code", "kimi-code",
 	}
 	for _, name := range npmTools {

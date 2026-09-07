@@ -666,7 +666,7 @@ var Registry = map[string]*Tool{
 		Name:                "pi-harness",
 		ExecName:            "pi-harness",
 		InstallHint:         "Install Pi Harness: https://github.com/pi-harness/pi-harness#run-the-web-console",
-		InstallCmd:          "npm install -g github:pi-harness/pi-harness#feat/cordis-pi-harness || npm install -g github:pi-harness/pi-harness#feat/cordis-pi-harness --registry=https://mirrors.cloud.tencent.com/npm/ || npm install -g github:pi-harness/pi-harness#feat/cordis-pi-harness --registry=https://registry.npmmirror.com",
+		InstallCmd:          "npm install -g @pi-harness/pi-harness@latest || npm install -g @pi-harness/pi-harness@latest --registry=https://mirrors.cloud.tencent.com/npm/ || npm install -g @pi-harness/pi-harness@latest --registry=https://registry.npmmirror.com",
 		RequiredEndpoint:    "openai",
 		AlternativeEndpoint: "openai-response",
 		envFn: func(_, token string) map[string]string {
